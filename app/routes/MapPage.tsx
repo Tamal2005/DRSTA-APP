@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { ChevronRight, ChevronLeft, ChevronUp } from 'lucide-react';
+import { ChevronRight, ChevronUp } from 'lucide-react';
 import axios from "axios";
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
@@ -328,7 +328,6 @@ export default function MapPage() {
             {routeInfo && (
                 <button
                     onClick={() => setIsPopupOpen(true)}
-                    className="fixed top-4 right-4 bg-white rounded-lg shadow-lg px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors duration-200 z-20"
                 >
                     View Route Details
                 </button>
