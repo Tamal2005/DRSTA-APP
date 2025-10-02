@@ -87,7 +87,7 @@ export default function MapPage() {
                     headers: {
                         "Content-Type": "application/json"
                     },
-                    timeout: 50000
+                    timeout: 10000
                 }
             );
 
