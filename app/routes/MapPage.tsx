@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { ChevronRight, ChevronUp } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ChevronUp, ChevronDown } from 'lucide-react';
 import axios from "axios";
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
@@ -197,13 +197,12 @@ export default function MapPage() {
         }
     };
     return (
-        <div id="mappage" className="h-screen min-h-0 w-full font-inter bg-gray-100 flex flex-col">
+        <div id="mappage" className="h-screen min-h-0 w-full font-inter flex flex-col">
             <div className="flex-1 min-h-0 h-full w-full">
                 {isMounted && (
                     <div ref={mapContainerRef} className="h-full w-full min-h-0" />
                 )}
             </div>
-
             {/* Collapsible Form */}
             <form
                 onSubmit={handleSubmit}
@@ -220,6 +219,25 @@ export default function MapPage() {
                     }
             `}
             >
+                {/* Toggle Button - Desktop (left Side) */}
+                <div className="flex items-center justify-between mb-4">
+                    <button
+                        type="button"
+                        onClick={() => setIsFormOpen(false)}
+                        className="hidden lg:flex hover:bg-gray-100 rounded-square transition-colors duration-500"
+                    >
+                        <ChevronLeft className="w-6 h-6" />
+                    </button>
+                    {/* Toggle Button - Mobile */}
+                    <button
+                        type="button"
+                        onClick={() => setIsFormOpen(false)}
+                        className="lg:hidden flex p-2 hover:bg-gray-100 rounded-full transition-colors duration-200"
+                    >
+                        <ChevronDown className="w-6 h-6" />
+                    </button>
+                </div>
+
                 <div className="space-y-4 sm:space-y-6 mb-6">
                     <div>
                         <label htmlFor="pickup_location" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
@@ -313,23 +331,14 @@ export default function MapPage() {
                 </button>
             )}
 
-            {/* Toggle Button - Mobile (Bottom Right) */}
+            {/* Toggle Button - Mobile */}
             {!isFormOpen && (
                 <button
                     onClick={() => setIsFormOpen(true)}
-                    className="lg:hidden flex fixed bottom-8 left-1/2 bg-blue-600 text-white p-4 rounded-full shadow-xl hover:bg-blue-700 transition-all duration-300 z-20 items-center justify-center backdrop-blur-md"
+                    className="lg:hidden flex fixed bottom-8 left-1/2 -translate-x-1/2 bg-blue-600 text-white p-4 rounded-full shadow-xl hover:bg-blue-700 transition-all duration-300 z-20 items-center justify-center backdrop-blur-md"
                     style={{ background: 'rgba(37, 99, 235, 0.9)' }}
                 >
                     <ChevronUp className="w-6 h-6" />
-                </button>
-            )}
-
-            {/* Route Info Button */}
-            {routeInfo && (
-                <button
-                    onClick={() => setIsPopupOpen(true)}
-                >
-                    View Route Details
                 </button>
             )}
 

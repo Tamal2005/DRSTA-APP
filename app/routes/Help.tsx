@@ -41,7 +41,7 @@ export default function Help() {
     }
   };
   return (
-    <div id='help' className="w-11/12 max-w-3xl text-center mx-auto h-screen flex flex-col items-center justify-center gap-4">
+    <div id='help' className="w-full text-center mx-auto h-screen flex flex-col items-center justify-center gap-4">
       <div className="mx-auto p-4 flex justify-between bg-opacity-80 rounded-lg">
         <div className="max-w-lg mx-auto font-mono w-full bg-opacity-80 p-6 rounded-lg shadow-lg cursor-default">
           <form onSubmit={onSubmit}>
