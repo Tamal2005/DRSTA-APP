@@ -10,7 +10,7 @@ export function meta({ }: Route.MetaArgs) {
 export default function Home() {
   return (
     <>
-      <div id='home' className="w-full pt-20 max-w-4xl mx-auto flex flex-col items-center gap-8 pb-10">
+      <div id='home' className="w-full pt-20 max-w-4xl mx-auto flex flex-col items-center justify-between p-4 gap-5 pb-5">
         {/* Title */}
         <div className="text-center space-y-4 pt-10">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-snug">
