@@ -1,4 +1,3 @@
-import { Moon, Sun } from 'lucide-react'
 import { useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router';
 
