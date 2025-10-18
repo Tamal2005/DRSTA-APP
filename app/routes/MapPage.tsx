@@ -240,7 +240,7 @@ export default function MapPage() {
 
                 <div className="space-y-4 sm:space-y-6 mb-6">
                     <div>
-                        <label htmlFor="pickup_location" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                        <label htmlFor="pickup_location" className="block mb-2 text-sm font-medium text-gray-900">
                             Enter Pickup Location
                         </label>
                         <input
@@ -249,14 +249,14 @@ export default function MapPage() {
                             placeholder="Enter Pickup Location"
                             value={pickup}
                             onChange={(e) => setPickup(e.target.value)}
-                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                             required
                             suppressHydrationWarning={true}
                         />
                     </div>
 
                     <div>
-                        <label htmlFor="drop_location" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                        <label htmlFor="drop_location" className="block mb-2 text-sm font-medium text-gray-900">
                             Enter Drop Location
                         </label>
                         <input
@@ -265,14 +265,14 @@ export default function MapPage() {
                             placeholder="Enter Drop Location"
                             value={drop}
                             onChange={(e) => setDrop(e.target.value)}
-                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                             required
                             suppressHydrationWarning={true}
                         />
                     </div>
 
                     <div>
-                        <label htmlFor="passengers" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                        <label htmlFor="passengers" className="block mb-2 text-sm font-medium text-gray-900">
                             Number of Passengers
                         </label>
                         <input
@@ -283,7 +283,7 @@ export default function MapPage() {
                             id="passengers"
                             value={passengers}
                             onChange={(e) => setPassengers(parseInt(e.target.value))}
-                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                             placeholder="Enter the number of passengers"
                             required
                             suppressHydrationWarning={true}
@@ -291,7 +291,7 @@ export default function MapPage() {
                     </div>
 
                     <div>
-                        <label htmlFor="luggage_weight" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                        <label htmlFor="luggage_weight" className="block mb-2 text-sm font-medium text-gray-900">
                             Approx Weight of Luggage (in kgs)
                         </label>
                         <input
@@ -301,7 +301,7 @@ export default function MapPage() {
                             id="luggage_weight"
                             value={weight}
                             onChange={(e) => setWeight(parseInt(e.target.value))}
-                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                             placeholder="Approx Weight of Luggage"
                             required
                             suppressHydrationWarning={true}
@@ -312,7 +312,7 @@ export default function MapPage() {
                 <button
                     type="submit"
                     disabled={isCalculating}
-                    className="w-auto self-center min-w-[120px] text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 sm:w-auto sm:self-center sm:min-w-[120px]"
+                    className="w-auto self-center min-w-[120px] text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center sm:w-auto sm:self-center sm:min-w-[120px]"
                     suppressHydrationWarning={true}
                 >
                     Get Route
