@@ -49,7 +49,7 @@ export default function Help() {
 
             <p className="text-gray-700 mb-6 text-left">
               <li className='right-2 p-2'>Facing an error or have a suggestion?</li>
-              <li className='right-2 p-2'>Fill out the form below and our support team will get back to you as soon as possible.</li>
+              <li className='right-2 p-2'>Fill out the form below and we will try to modify it.</li>
             </p>
 
             <div className="mb-4">

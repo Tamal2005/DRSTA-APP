@@ -2,8 +2,8 @@ import type { Route } from "./+types/home";
 
 export function meta({ }: Route.MetaArgs) {
   return [
-    { title: "DRSTA - Smart Route & Vehicle Recommendation System | AI-Powered Transit" },
-    { name: "description", content: "AI-powered route planning, vehicle recommendation, AI routing, shortest path calculations, smart vehicle suggestions based on passengers and luggage, transit optimization, smart transportation, mapbox routes" },
+    { title: "DRSTA - Smart Route & Vehicle Recommendation System" },
+    { name: "description", content: "AI-powered route planning, vehicle recommendation, shortest path calculations, smart vehicle suggestions based on passengers and luggage, mapbox routes" },
   ];
 }
 
