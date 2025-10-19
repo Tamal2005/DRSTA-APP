@@ -53,7 +53,7 @@ export default function Help() {
               <li className='right-2 p-2'>Fill out the form below and we will try to modify it.</li>
             </p>
             <form className='mx-w-2xl mx-auto' onSubmit={onSubmit}>
-                <div className='grid grid-cols-2 gap-6 mt-10 mb-8'>
+                <div className='grid grid-cols-2 gap-5 mt-10 mb-8'>
                     <input onChange={(e) => setName(e.target.value)} name='name' type="text" placeholder="Enter Your Name" className='flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white' required />
                     <input onChange={(e) => setEmail(e.target.value)} name='email' type="email" placeholder="Enter Your Email" className='flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white' required />
                 </div>
