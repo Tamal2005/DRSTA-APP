@@ -12,8 +12,8 @@ export default function Home() {
     <>
       <div id='home' className="w-full pt-20 max-w-4xl mx-auto flex flex-col items-center justify-between p-4 gap-5 pb-5">
         {/* Title */}
-        <div className="text-center space-y-4 pt-10">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-snug">
+        <div className="text-center space-y-4 mt-10">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold">
             🚖 Smart Route & Vehicle Recommendation
           </h1>
           <p className="text-gray-600 text-base sm:text-lg md:text-xl max-w-2xl mx-auto">

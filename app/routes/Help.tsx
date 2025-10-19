@@ -45,36 +45,24 @@ export default function Help() {
     }
   };
   return (
-    <div id='help' className="w-full text-center mx-auto h-screen flex flex-col items-center justify-center gap-4">
-      <div className="mx-auto p-4 flex justify-between bg-opacity-80 rounded-lg">
-        <div className="max-w-lg mx-auto font-mono w-full bg-opacity-80 p-6 rounded-lg shadow-lg cursor-default">
-          <form onSubmit={onSubmit}>
-            <h2 className="text-3xl font-bold mb-4 text-teal-700">Help Desk Support</h2>
-
+    <div id='contact' className="w-full px-[12%] py-10 mt-20">
+            <h2 className="text-center text-3xl font-bold mb-4 text-teal-700">Help Desk Support</h2>
+            
             <p className="text-gray-700 mb-6 text-left">
               <li className='right-2 p-2'>Facing an error or have a suggestion?</li>
               <li className='right-2 p-2'>Fill out the form below and we will try to modify it.</li>
             </p>
+            <form className='mx-w-2xl mx-auto' onSubmit={onSubmit}>
+                <div className='grid grid-cols-2 gap-6 mt-10 mb-8'>
+                    <input onChange={(e) => setName(e.target.value)} name='name' type="text" placeholder="Enter Your Name" className='flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white' required />
+                    <input onChange={(e) => setEmail(e.target.value)} name='email' type="email" placeholder="Enter Your Email" className='flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white' required />
+                </div>
+                <textarea onChange={(e) => setMessage(e.target.value)} name='message' rows={6} placeholder='Enter Your Message' className='w-full p-4 outline-none border-[0.5px] border-gray-400 rounded-md bg-white mb-6' required></textarea>
 
-            <div className="mb-4">
-              <input onChange={(e) => setName(e.target.value)} type="text" name="name" autoComplete='name' className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500" id="cilentName" placeholder="Your Name" required />
-            </div>
+                <button disabled={isCalculating} type="submit" className='py-3 px-8 w-max flex items-center justify-between gap-2 bg-black/80 text-white rounded-full mx-auto hover:bg-black duration-500'>Submit Now</button>
+            </form>
 
-            <div className="mb-4">
-              <input onChange={(e) => setEmail(e.target.value)} type="email" name="email" autoComplete='email' className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500" id="clientEmail1" placeholder="Your Email Id" required />
-              <p className="text-sm text-gray-600 mt-1 block">We'll never share your email with anyone else.</p>
-            </div>
-
-            <div className="mb-4">
-              <textarea onChange={(e) => setMessage(e.target.value)} name="message" className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500" id="myBox" rows={4} placeholder="Write Message" required></textarea>
-            </div>
-
-            <button type="submit" className="w-24 bg-gray-500 text-white py-2 px-4 rounded-md hover:bg-gray-600 transition-colors">
-              Submit
-            </button>
-          </form>
-
-          {isCalculating && (
+            {isCalculating && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-opacity-80 backdrop-blur-sm">
                     <div className="bg-white rounded-2xl p-8 flex flex-col items-center space-y-4 shadow-2xl max-w-sm mx-4">
                         <div className="relative">
@@ -89,10 +77,8 @@ export default function Help() {
                 </div>
             )}
 
-          <PopUpHelp isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} messageInfo={messageInfo} loading={false} />
+            <PopUpHelp isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} messageInfo={messageInfo} loading={isCalculating}/>
 
         </div>
-      </div>
-    </div>
   )
 }
