@@ -163,9 +163,10 @@ export default function MapPage() {
 
         setIsFormOpen(false);
 
+        setIsCalculating(true);
+
         if (pickup && drop && map) {
             try {
-                setIsCalculating(true);
                 setRouteInfo(null);
                 setError(null);
                 setResult(null)
