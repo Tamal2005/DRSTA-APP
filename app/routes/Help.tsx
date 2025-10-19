@@ -45,9 +45,9 @@ export default function Help() {
     }
   };
   return (
-    <div id='contact' className="w-full px-[12%] py-10 mt-20">
+    <div id='contact' className="w-full px-[12%] py-10 mt-15">
             <h2 className="text-center text-3xl font-bold mb-4 text-teal-700">Help Desk Support</h2>
-            
+
             <p className="text-gray-700 mb-6 text-left">
               <li className='right-2 p-2'>Facing an error or have a suggestion?</li>
               <li className='right-2 p-2'>Fill out the form below and we will try to modify it.</li>
