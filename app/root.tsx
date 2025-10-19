@@ -33,7 +33,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body>
+      <body className="antialiased leading-8 overflow-x-hidden">
         {children}
         <Navbar/>
         <ScrollRestoration />

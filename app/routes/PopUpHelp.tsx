@@ -1,5 +1,5 @@
 import React from 'react'
-import { X, MapPin, Clock, Route } from 'lucide-react';
+import { X, InfoIcon, CircleAlertIcon, CircleCheck  } from 'lucide-react';
 
 interface MessageInfo {
   result: string | null;
@@ -19,8 +19,8 @@ const PopUpHelp: React.FC<PopupProps> = ({ isOpen, onClose, messageInfo, loading
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b border-gray-200">
           <div className="flex items-center space-x-2">
-            <Route className="w-6 h-6 text-blue-600" />
-            <h2 className="text-xl font-semibold text-gray-800">Help Desk Support</h2>
+            <InfoIcon className="w-6 h-6 text-blue-600" />
+            <h2 className="text-xl font-semibold text-gray-800">Submission Status</h2>
           </div>
           <button
             onClick={onClose}
@@ -34,8 +34,9 @@ const PopUpHelp: React.FC<PopupProps> = ({ isOpen, onClose, messageInfo, loading
           {loading ? (
             <p>Loading...</p>
           ) : (
-            <div>
-              <h3 className="text-lg font-semibold">Submission Status</h3>
+            <div className='flex flex-col items-center justify-between'>
+              {messageInfo?.result === "Something went wrong." ? (<CircleAlertIcon className="w-7 text-red-600" />) : 
+                (<CircleCheck className="w-7 text-green-600" />)}
               <p>{messageInfo?.result}</p>
             </div>
           )}

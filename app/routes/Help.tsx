@@ -9,10 +9,12 @@ export default function Help() {
   const [message, setMessage] = useState<string>("");
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [messageInfo, setMessageInfo] = useState<{ result: string | null }>({ result: null });
+  const [isCalculating, setIsCalculating] = useState(false);
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setResult("Sending...");
+    setIsCalculating(true);
 
     try {
       const res = await axios.post("https://fast-email-api-alpha.vercel.app/contact", {
@@ -38,6 +40,8 @@ export default function Help() {
       console.error("❌ Error submitting form:", error);
       setResult("Submission failed.");
       setIsPopupOpen(true);
+    } finally {
+      setIsCalculating(false);
     }
   };
   return (
@@ -69,6 +73,21 @@ export default function Help() {
               Submit
             </button>
           </form>
+
+          {isCalculating && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-opacity-80 backdrop-blur-sm">
+                    <div className="bg-white rounded-2xl p-8 flex flex-col items-center space-y-4 shadow-2xl max-w-sm mx-4">
+                        <div className="relative">
+                            <div className="animate-spin rounded-full h-16 w-16 border-4 border-blue-200"></div>
+                            <div className="animate-spin rounded-full h-16 w-16 border-4 border-blue-600 border-t-transparent absolute top-0 left-0"></div>
+                        </div>
+                        <div className="text-center">
+                            <h3 className="text-lg font-semibold text-gray-800 mb-2">Submitting your form.</h3>
+                            <p className="text-xs text-gray-500 mt-2">This may take a moment</p>
+                        </div>
+                    </div>
+                </div>
+            )}
 
           <PopUpHelp isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} messageInfo={messageInfo} loading={false} />
 
