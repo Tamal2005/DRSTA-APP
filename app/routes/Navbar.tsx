@@ -18,7 +18,7 @@ export default function Navbar() {
             <nav className="w-full fixed top-0 left-0 right-0 py-4 flex items-center justify-center z-50">
                 {/* Desktop Navigation */}
                 <div className="hidden md:flex items-center gap-4">
-                    <ul className={`flex items-center gap-3 lg:gap-8 rounded-full px-12 py-2 backdrop-blur-lg shadow-sm transition-all duration-300 ${isScroll ? "bg-opacity/80" : "bg-opacity/50"}`}>
+                    <ul className={`flex items-center gap-3 lg:gap-8 rounded-full px-10 py-1.5 backdrop-blur-lg shadow-sm transition-all duration-300 ${isScroll ? "bg-opacity/80" : "bg-opacity/50"}`}>
                         <Link to="/"><li className="px-2 py-2 lg:px-2.5 lg:py-2.5 font-semibold rounded-full transition">Home</li></Link>
                         <Link to="/mappage"><li className="px-2 py-2 lg:px-2.5 lg:py-2.5 font-semibold rounded-full transition">Map</li></Link>
                         <Link to="/help"><li className="px-2 py-2 lg:px-2.5 lg:py-2.5 font-semibold rounded-full transition">Help</li></Link>

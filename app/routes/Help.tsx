@@ -48,16 +48,16 @@ export default function Help() {
     <div id='contact' className="w-full px-[12%] py-10 mt-15">
             <h2 className="text-center text-3xl font-bold mb-4 text-teal-700">Help Desk Support</h2>
 
-            <p className="text-gray-700 mb-6 text-left">
+            <p className="text-gray-700 mb-4 text-left">
               <li className='right-2 p-2'>Facing an error or have a suggestion?</li>
               <li className='right-2 p-2'>Fill out the form below and we will try to modify it.</li>
             </p>
-            <form className='mx-w-2xl mx-auto' onSubmit={onSubmit}>
-                <div className='grid grid-cols-2 gap-5 mt-10 mb-8'>
+            <form className='mx-w-2xl grid grid-rows-1 mx-auto' onSubmit={onSubmit}>
+                <div className='grid lg:grid-cols-2 grid-rows-1 gap-4 mt-4 mb-5'>
                     <input onChange={(e) => setName(e.target.value)} name='name' type="text" placeholder="Enter Your Name" className='flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white' required />
                     <input onChange={(e) => setEmail(e.target.value)} name='email' type="email" placeholder="Enter Your Email" className='flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white' required />
                 </div>
-                <textarea onChange={(e) => setMessage(e.target.value)} name='message' rows={6} placeholder='Enter Your Message' className='w-full p-4 outline-none border-[0.5px] border-gray-400 rounded-md bg-white mb-6' required></textarea>
+                <textarea onChange={(e) => setMessage(e.target.value)} name='message' rows={6} placeholder='Enter Your Message' className='w-full p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white mb-6' required></textarea>
 
                 <button disabled={isCalculating} type="submit" className='py-3 px-8 w-max flex items-center justify-between gap-2 bg-black/80 text-white rounded-full mx-auto hover:bg-black duration-500'>Submit Now</button>
             </form>
