@@ -17,7 +17,7 @@ export default function Help() {
     setIsCalculating(true);
 
     try {
-      const res = await axios.post("https://fast-email-api-alpha.vercel.app/contact", {
+      const res = await axios.post("https://flask-email-api-blue.vercel.app/contact", {
         Name: name,
         Email: email,
         Message: message,
@@ -25,20 +25,22 @@ export default function Help() {
 
       const data = res.data;
 
-      setMessageInfo({ result: data.success ? "Your form has been successfully submitted." : "Something went wrong." })
+      
 
       if (data.success) {
         setResult("Your form has been successfully submitted.");
+        setMessageInfo({ result: "Your form has been successfully submitted." });
         setIsPopupOpen(true);
         setName("");
         setEmail("");
         setMessage("");
       } else {
         setResult("Something went wrong.");
+        setMessageInfo({ result: "Something went wrong." });
       }
     } catch (error) {
-      console.error("❌ Error submitting form:", error);
       setResult("Submission failed.");
+      setMessageInfo({ result: "Submission failed." });
       setIsPopupOpen(true);
     } finally {
       setIsCalculating(false);

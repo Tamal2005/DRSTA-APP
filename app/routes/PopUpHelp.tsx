@@ -35,8 +35,8 @@ const PopUpHelp: React.FC<PopupProps> = ({ isOpen, onClose, messageInfo, loading
             <p>Loading...</p>
           ) : (
             <div className='flex flex-col items-center justify-between'>
-              {messageInfo?.result === "Something went wrong." ? (<CircleAlertIcon className="w-7 text-red-600" />) : 
-                (<CircleCheck className="w-7 text-green-600" />)}
+              {messageInfo?.result === "Your form has been successfully submitted." ? (<CircleCheck className="w-7 text-green-600" />) : 
+                (<CircleAlertIcon className="w-7 text-red-600" />)}
               <p>{messageInfo?.result}</p>
             </div>
           )}
