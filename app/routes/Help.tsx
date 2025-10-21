@@ -7,6 +7,7 @@ export default function Help() {
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [message, setMessage] = useState<string>("");
+  const [websiteType, setWebsiteType] = useState<string>("");
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [messageInfo, setMessageInfo] = useState<{ result: string | null }>({ result: null });
   const [isCalculating, setIsCalculating] = useState(false);
@@ -21,6 +22,7 @@ export default function Help() {
         Name: name,
         Email: email,
         Message: message,
+        WebsiteType: "Drsta App",
       });
 
       const data = res.data;
