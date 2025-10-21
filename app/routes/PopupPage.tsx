@@ -16,7 +16,7 @@ interface PopupProps {
   loading?: boolean;
 }
 const PopupPage: React.FC<PopupProps> = ({ isOpen, onClose, routeInfo, loading = false }) => {
-    if (!isOpen) return null;
+  if (!isOpen) return null;
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-opacity-50 backdrop-blur-sm">
       <div className="bg-white rounded-xl shadow-2xl max-w-md w-full mx-4 transform transition-all duration-300 ease-out">
@@ -84,9 +84,14 @@ const PopupPage: React.FC<PopupProps> = ({ isOpen, onClose, routeInfo, loading =
                       </div>
                     </div>
                   )}
-                  {routeInfo.result && (
+                  {routeInfo.result === null || routeInfo.result === undefined ? (
+                    <div className="flex items-center space-x-2">
+                      <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-blue-600"></div>
+                      <span className="text-gray-500 text-sm">Analyzing route...</span>
+                    </div>
+                  ) : (
                     <div className="flex items-center space-x-3 p-3 bg-blue-50 rounded-lg">
-                      <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+                      <div className="w-4 h-4 bg-blue-500 rounded-full"></div>
                       <div>
                         <div className="text-sm font-medium text-gray-700">Vehicle</div>
                         <div className="text-gray-600 truncate">{routeInfo.result}</div>

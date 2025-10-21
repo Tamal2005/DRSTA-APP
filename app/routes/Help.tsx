@@ -7,6 +7,7 @@ export default function Help() {
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [message, setMessage] = useState<string>("");
+  const [websiteType, setWebsiteType] = useState<string>("");
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [messageInfo, setMessageInfo] = useState<{ result: string | null }>({ result: null });
   const [isCalculating, setIsCalculating] = useState(false);
@@ -17,10 +18,12 @@ export default function Help() {
     setIsCalculating(true);
 
     try {
-      const res = await axios.post("https://flask-email-api-blue.vercel.app/contact", {
+      const emailApi = import.meta.env.VITE_EMAIL_API_URL;
+      const res = await axios.post(`${emailApi}/contact`, {
         Name: name,
         Email: email,
         Message: message,
+        WebsiteType: "Drsta App",
       });
 
       const data = res.data;

@@ -5,8 +5,7 @@ import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import Popup from "./PopupPage"
 
-mapboxgl.accessToken =
-    "pk.eyJ1IjoidGFtYWxkZWJuYXRoLTA3IiwiYSI6ImNtZzE2OXZvbDBuMWoycnF3bG5md2UyN24ifQ.puDh1Y5GFAbx0xEYkXd5nA";
+mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_ACCESS_TOKEN;
 
 export default function MapPage() {
     const mapContainerRef = useRef<HTMLDivElement | null>(null);
@@ -75,8 +74,9 @@ export default function MapPage() {
         let predictionResult = null;
 
         try {
+            const mlApi = import.meta.env.VITE_ML_API_URL ;
             const response = await axios.post(
-                "https://drsta-ml-api.onrender.com/api/call_for_prediction",
+                `${mlApi}`,
                 {
                     passenger: passengers,
                     weight: weight,
